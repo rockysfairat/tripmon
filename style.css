@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: aquamarine;
+  overflow: hidden;
+  height: 100%;
+}
+
+main {
+  background-color: greenyellow;
+  width: 8000px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.trainWrapper {
+  width: 800px;
+  height: 200px;
+  outline: red solid 2px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.trainHeadLeft,
+.trainHeadRight,
+.trainCar {
+  width: 190px;
+  height: 60px;
+  border: solid #000 3px;
+  margin-right: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+/* Car windows */
+
+.carWindow {
+  background-color: aqua;
+  width: 30px;
+  height: 30px;
+  border: solid #000 3px;
+  border-radius: 5px;
+}
+
+/* The Right Train Head */
+
+.trainHeadRight {
+  border-radius: 10px 150px 10px 10px;
+}
+
+.trainHeadRight > div:nth-child(3) {
+  background-color: aqua;
+  width: 70px;
+  border-radius: 20px 150px 20px 20px;
+}
+
+.trainHeadRight > div:nth-child(2) {
+  width: 45px;
+  border-radius: 5px;
+}
+
+.trainHeadRight > div:nth-child(1) {
+  display: none;
+}
+
+/* The Left Train Head */
+
+.trainHeadLeft {
+  border-radius: 150px 10px 10px 10px;
+}
+
+/* Train Car */
+
+.trainCar {
+  border-radius: 5px;
+}
+
+/* Windows: */
+
+.trainHeadLeft > div:nth-child(1) {
+  width: 70px;
+  border-radius: 150px 20px 20px 20px;
+}
+
+.trainHeadLeft > div:nth-child(2) {
+  width: 45px;
+  border-radius: 5px;
+}
+
+.trainHeadLeft > div:nth-child(3) {
+  display: none;
+}
+
+/* Doors */
+
+.trainCar > div:nth-child(2) {
+  background-color: antiquewhite;
+  height: 45px;
+  width: 35px;
+  position: relative;
+  bottom: -7px;
+}
+
+/* Wheels */
+
+.wheel {
+  width: 20px;
+  height: 20px;
+  border: #000 solid 2px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -20px;
+}
+
+.trainHeadLeft > div:nth-child(4),
+.trainHeadRight > div:nth-child(4),
+.trainCar > div:nth-child(4) {
+  left: 1px;
+}
+
+.trainHeadLeft > div:nth-child(5),
+.trainHeadRight > div:nth-child(5),
+.trainCar > div:nth-child(5) {
+  left: 20px;
+}
+
+.trainHeadLeft > div:nth-child(6),
+.trainHeadRight > div:nth-child(6),
+.trainCar > div:nth-child(6) {
+  right: 1px;
+}
+
+.trainHeadLeft > div:nth-child(7),
+.trainHeadRight > div:nth-child(7),
+.trainCar > div:nth-child(7) {
+  right: 20px;
+}
