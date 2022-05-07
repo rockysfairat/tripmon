@@ -16,10 +16,11 @@ body {
 
 main {
   background-color: greenyellow;
-  width: 8000px;
-  height: 100%;
+  width: 100%;
+  height: calc(100% - 20px);
   display: flex;
   align-items: flex-end;
+  z-index: 1;
 }
 
 .trainWrapper {
@@ -28,6 +29,8 @@ main {
   outline: red solid 2px;
   display: flex;
   align-items: flex-end;
+  position: absolute;
+  z-index: 3;
 }
 
 .trainHeadLeft,
@@ -42,6 +45,7 @@ main {
   align-items: center;
   justify-content: space-around;
   position: relative;
+  background-color: #645fa2;
 }
 
 /* Car windows */
@@ -105,12 +109,70 @@ main {
 
 /* Doors */
 
-.trainCar > div:nth-child(2) {
+.trainDoorFrame {
   background-color: antiquewhite;
   height: 45px;
   width: 35px;
   position: relative;
   bottom: -7px;
+  border: solid #000 3px;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  overflow: hidden;
+  animation-delay: 18s;
+  animation-iteration-count: 1;
+  animation-name: doorOpenClose;
+  animation-duration: 4000ms;
+}
+
+.door {
+  width: 50%;
+  height: 100%;
+  background-color: #645fa2;
+}
+
+.trainDoorFrame > div:nth-child(1) {
+  border-right: #000 solid 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.trainDoorFrame > div:nth-child(2) {
+  border-left: #000 solid 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.doorWindow {
+  width: 5px;
+  height: 60%;
+  background-color: aqua;
+  left: 5px;
+}
+
+@keyframes doorOpenClose {
+  10% {
+    gap: 0px;
+  }
+  20% {
+    gap: 20px;
+  }
+  40% {
+    gap: 20px;
+  }
+  60% {
+    gap: 20px;
+  }
+  80% {
+    gap: 20px;
+  }
+  100% {
+    gap: 0px;
+  }
 }
 
 /* Wheels */
@@ -121,7 +183,7 @@ main {
   border: #000 solid 2px;
   border-radius: 50%;
   position: absolute;
-  bottom: -20px;
+  bottom: -22px;
 }
 
 .trainHeadLeft > div:nth-child(4),
@@ -146,4 +208,43 @@ main {
 .trainHeadRight > div:nth-child(7),
 .trainCar > div:nth-child(7) {
   right: 20px;
+}
+
+/* TREES */
+
+.trees {
+  height: 200px;
+  position: relative;
+  bottom: 20px;
+  display: flex;
+  z-index: 2;
+  animation: moveTrees 40s;
+}
+
+.trees > img {
+  margin-right: -60px;
+}
+
+@keyframes moveTrees {
+  0% {
+    right: 0px;
+  }
+
+  45% {
+    right: 4000px;
+  }
+  55% {
+    right: 4000px;
+  }
+
+  100% {
+    right: 7200px;
+  }
+}
+
+footer {
+  width: auto;
+  display: block;
+  background-color: #000;
+  height: 20px;
 }
